@@ -18,36 +18,35 @@ const Navbar = () => {
   };
 
   return (
-    <div className='flex justify-between items-center h-16 bg-white-700 px-10 shadow-md'>
+    <div className='flex justify-between items-center h-16 bg-white px-10 shadow-md'>
       <div>
         <Link to={'/'}>
-          <div className='cursor-pointer text-2xl text-black-900 font-bold'>
+          <div className='cursor-pointer text-2xl text-black font-bold'>
             Easy<span className='text-red-500 uppercase'>B</span>uy
           </div>
         </Link>
       </div>
-      <div className='flex gap-4'>
+      <div className='flex gap-6'>
         {!enter ? (
           <>
-            <Link to='/Login'>
+            <Link to='/login'>
               <div
-                className='cursor-pointer transition-all flex  '
+                className='cursor-pointer flex items-center transition-all'
                 style={{ fontSize: '20px' }}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
               >
-                <div>Login</div><IoIosLogIn  className='mt-2 '/>
+                <span className='mr-1'>Login</span><IoIosLogIn className='mt-1' />
               </div>
             </Link>
             <Link to='/signup'>
               <div
-                className='cursor-pointer  flex transition-all'
+                className='cursor-pointer flex items-center transition-all'
                 style={{ fontSize: '20px' }}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
               >
-              <div>Signup</div><GrUserNew className='mt-2' />
-
+                <span className='mr-1'>Signup</span><GrUserNew className='mt-1' />
               </div>
             </Link>
           </>
@@ -60,7 +59,7 @@ const Navbar = () => {
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
               >
-                Catagory
+                Category
               </div>
             </Link>
             <Link to='/product'>
@@ -75,24 +74,23 @@ const Navbar = () => {
             </Link>
             <Link to='/'>
               <div
-                className='cursor-pointer transition-all flex'
+                className='cursor-pointer flex items-center transition-all'
                 style={{ fontSize: '20px' }}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
                 onClick={Logout}
               >
-                <div>Logout</div><CiLogout className='mt-2'/>
-
+                <span className='mr-1'>Logout</span><CiLogout className='mt-1' />
               </div>
             </Link>
             <Link to='/cart'>
               <div
-                className='cursor-pointer transition-all flex '
+                className='cursor-pointer flex items-center transition-all'
                 style={{ fontSize: '20px' }}
                 onMouseOver={handleMouseOver}
                 onMouseOut={handleMouseOut}
               >
-           <div>Cart </div>  <FaShoppingCart  className='mt-2'/>
+                <span className='mr-1'>Cart</span><FaShoppingCart className='mt-1' />
               </div>
             </Link>
           </>

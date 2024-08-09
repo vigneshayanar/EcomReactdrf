@@ -58,3 +58,4 @@ class Userserializer(serializers.ModelSerializer):
             email=validated_data['email'],
         )
         return user
+    
