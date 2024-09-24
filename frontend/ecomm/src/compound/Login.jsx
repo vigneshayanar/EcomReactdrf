@@ -37,7 +37,7 @@ const Login = () => {
             <h1 className='text-center uppercase font-bold text-xl'>Welcome Back</h1>
             <p className='text-gray-300 text-center'>Enter your credential to Login</p>
             <p className='text-gray-300 text-center'>new user </p>
-          <Link to="/Signup"> <p className='text-center text-gary-900 underline-offset-1 cursor-pointer' >signup</p></Link> 
+          <Link to="/Signup"> <h2 className='text-center px-2 py-1 text-gary-900 hover:text-gray-500 underline-offset-1 cursor-pointer' >signup</h2></Link> 
         </div>
         </div>
     </div>

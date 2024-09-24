@@ -25,8 +25,8 @@ const Footer = () => {
 
         <div className='flex flex-col mb-6 md:mb-0'>
           <h5 className='text-2xl font-bold mb-4 text-blue-400'>Contact Us</h5>
-          <p className='text-sm mb-2 flex items-center'><FaEnvelope className='mr-2' /> Email: <a href='mailto:info@example.com' className='hover:text-blue-300'>info@example.com</a></p>
-          <p className='text-sm mb-2 flex items-center'><FaPhone className='mr-2' /> Phone: <a href='tel:+1234567890' className='hover:text-blue-300'>(123) 456-7890</a></p>
+          <p className='text-sm mb-2 flex items-center'><FaEnvelope className='mr-2' /> Email: <a href='mailto:vigneshayanar@gmail.com' className='hover:text-blue-300'>vigneshayanar@gmail.com</a></p>
+          <p className='text-sm mb-2 flex items-center'><FaPhone className='mr-2' /> Phone: <a href='tel+91 8056268154' className='hover:text-blue-300'>+91 8056268154</a></p>
         </div>
       </div>
 

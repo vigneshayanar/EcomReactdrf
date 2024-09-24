@@ -139,9 +139,9 @@ REST_FRAMEWORK = {
     ],
 }
 SIMPLE_JWT={
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=20),
+    'ACCESS_TOKEN_LIFETIME': timedelta(hours=24),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
-    'ROTATE_REFRESH_TOKENS': False,
+    'ROTATE_REFRESH_TOKENS': True,
     'UPDATE_LAST_LOGIN':False,
     
     'ALGORITHM': 'HS256',
@@ -165,7 +165,7 @@ SIMPLE_JWT={
     'JTI_CLAIM': 'jti',
 
     'SLIDING_TOKEN_REFRESH_EXP_CLAIM': 'refresh_exp',
-    'SLIDING_TOKEN_LIFETIME': timedelta(minutes=5),
+    'SLIDING_TOKEN_LIFETIME': timedelta(hours=24),
     'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),
 }
 
@@ -178,3 +178,7 @@ CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOWED_ORIGINS=[
     "http://localhost:5173",
     "http://localhost:5174",]
+
+PAYPAL_MODE = 'sandbox'  
+PAYPAL_CLIENT_ID = 'Aa8XHMLVgM61MwQrR4vWQPFHrHT6e9dgAb6jkBSlZNowSRD8B1UZ_eEIFsAkszfSzTApayGasAbN87QZ'
+PAYPAL_CLIENT_SECRET = 'EFd6nplLgOpKwUPcDUwi8jf5q6BACNj5Etipv-nwbMh6MJx4NQzrirbKRfqWk6HuG4e8PnNHSWJ_5IR6'

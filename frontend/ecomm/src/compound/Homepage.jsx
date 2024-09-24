@@ -1,6 +1,6 @@
 import React from 'react';
 import backgroundImage from '../assets/homepages.jpg';
-
+import { Link } from 'react-router-dom';
 const Homepage = () => {
   return (
     <div
@@ -26,9 +26,9 @@ const Homepage = () => {
         <div className='mb-8'>
           <h2 className='text-2xl font-bold mb-2'>Get up to 30% off!</h2>
           <p className='text-lg mb-4'>Limited time offer on select items.</p>
-          <button className='bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600'>
+         <Link to="/"> <button className='bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600'>
             Shop Now
-          </button>
+          </button></Link>
         </div>
       </div>
     </div>

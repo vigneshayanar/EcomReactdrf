@@ -16,7 +16,8 @@ const Signup = () => {
             if (response.status === 201) {
               console.log("hii");
               toast.success("succesfully signup")
-              navigate('/')  // Log "hii" when the status code is 201
+              toast("succesfully signup")
+              navigate('/Login') 
             } else {
               console.log("Unexpected status code:", response.status);
               toast.error("plz try with diffrent credential")
@@ -62,7 +63,7 @@ const Signup = () => {
             <h1 className='text-center uppercase font-bold text-xl'>Welcome user</h1>
             <p className='text-gray-300 text-center'>Enter your credential to Signup</p>
             <p className='text-gray-300 text-center'>if you already have account</p>
-           <Link to="/Login"> <p className='text-center text-gary-900 underline-offset-1 cursor-pointer' >Login</p></Link>
+           <Link to="/Login"> <h2 className='text-center text-gary-900 hover:text-gray-500 underline-offset-1 cursor-pointer' >Login</h2></Link>
         </div>
         </div>
     </div>

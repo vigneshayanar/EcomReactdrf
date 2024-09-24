@@ -2,15 +2,17 @@ import axios from 'axios'
 import React, { Children, createContext, useEffect } from 'react'
 import { useContext } from 'react'
 import { useState } from 'react'
+import { Toaster } from "@/components/ui/toaster"
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
 export const ApiContext=createContext()
-
+import { useNavigate } from 'react-router-dom';
 const MainContext = ({children}) => {
    const [email,setemail]=useState('')
    const [error,seterror]=useState()
+   const [price,setprice]=useState(0)
     const [password,setpassword]=useState('')
-    const [enter,setenter]=useState(false)
+    const [enter,setenter]=useState()
     const login=(email,password,username)=>{
     axios.post("http://127.0.0.1:8000/api/token/",{email:email,password:password,username:username})
     .then(response=>{
@@ -20,13 +22,13 @@ const MainContext = ({children}) => {
       localStorage.setItem("access",access)
       const get=localStorage.getItem("access")
       console.log(get)
-      seterror(true)
-      toast.success('Successfully login')
+      seterror(false)
+      toast("succesfully Login")
     })
     .catch(error=>{
       console.error(error.message)
       toast.error("plz check the credential")
-      seterror(false)
+      seterror(true)
     })
   }
   const Logout=()=>{
@@ -36,7 +38,7 @@ const MainContext = ({children}) => {
   };
 
   return (
-    <ApiContext.Provider value={{email,password,setemail,setpassword,login,enter,Logout,setenter,error,enter}}>
+    <ApiContext.Provider value={{email,password,setemail,price,setprice,setpassword,login,enter,Logout,setenter,error,enter}}>
       {children}
     </ApiContext.Provider>
   )

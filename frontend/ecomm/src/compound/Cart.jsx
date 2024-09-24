@@ -1,9 +1,14 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { ApiContext } from '../context/MainContext';
+import { Link } from 'react-router-dom';
+import { Button } from "@/components/ui/button"
 
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
   const [total,settotal]=useState(0)
+  const [length,setlength]=useState(0)
+  const {price,setprice}=useContext(ApiContext)
   let constotal=0
   useEffect(() => {
     const fetchCartItems = async () => {
@@ -15,10 +20,14 @@ const Cart = () => {
         setCartItems(response.data)
         console.log(cartItems)
         let calculatedTotal = 0;
+        let len=0
         response.data.forEach(item => {
           calculatedTotal += parseFloat(item.product_details.price) * item.quantity;
+          len+=1
         });        
         settotal(calculatedTotal)
+        setprice(total)
+        setlength(len)
       } catch (error) {
         console.error(error.message);
       }
@@ -65,6 +74,7 @@ const Cart = () => {
     <div className='mt-5 flex justify-center font-bold text-lg text-gray-900'>
       Total Price: <span className='ml-2 text-blue-600'>${total.toFixed(2)}</span>
     </div>
+   <Link to="/checkout"><div className=' mt-5 flex justify-center text-2xl'> <Button variant="secondary" className=" bg-green-200 px-2 py-1 rounded-lg  transition-colors">Proceed To Buy ({length}items)</Button></div></Link>
   </div>
 );
 };

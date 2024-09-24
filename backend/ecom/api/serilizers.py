@@ -36,9 +36,11 @@ class Userserializer(serializers.ModelSerializer):
     def validate_username(self,value):
         if User.objects.filter(username=value).exists():
             raise serializers.ValidationError("username is alredy exists")
+        return value
     def validate_email(self,value):
         if User.objects.filter(email=value).exists():
             raise serializers.ValidationError("Email is alredy exist")
+        return value
     def validate_password(self,value):
         if len(value)<8:
             raise serializers.ValidationError("password must be at least 8 charters")
@@ -50,7 +52,7 @@ class Userserializer(serializers.ModelSerializer):
             raise serializers.ValidationError("atleast one number should be in ")
         elif not re.search('[_@$]',value):
             raise serializers.ValidationError("atleast one @$_ charter should be in ")
-       
+        return value
     def create(self, validated_data):
         user=User.objects.create_user(
             username=validated_data['username'],

@@ -27,7 +27,7 @@ const Navbar = () => {
         </Link>
       </div>
       <div className='flex gap-6'>
-        {!enter ? (
+        {!enter  ? (
           <>
             <Link to='/login'>
               <div
